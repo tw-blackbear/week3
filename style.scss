@@ -1,0 +1,1294 @@
+//utilities
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 100%;
+}
+
+@mixin pad {
+    @media only screen and (max-width:992px) {
+        @content;
+    }
+
+}
+
+@mixin mp {
+    @media only screen and (max-width:767px) {
+        @content;
+    }
+
+}
+
+//utilities end
+
+
+//header
+
+.nav-content {
+    background-color: #AA0601;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px 88px;
+
+    @include pad {
+        padding: 30px 48px;
+    }
+
+    @include mp {
+        position: relative;
+        justify-content: center;
+        padding: 20px 30px;
+    }
+
+    img {
+        display: block;
+        width: 100%;
+
+        @include mp {
+            max-width: 48px;
+            max-height: 30px;
+        }
+
+
+
+
+    }
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-between;
+        width: 500px;
+
+        @include pad {
+            width: 400px;
+        }
+
+        @include mp {
+            max-height: 0px;
+            left: 0;
+            top: 100%;
+            width: 100%;
+            position: absolute;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            transition: all 0.8s;
+            z-index: 120;
+        }
+
+        @include mp {
+            .nav-menu .active {
+                max-height: 252px;
+            }
+        }
+
+    }
+
+
+    .nav-menu li {
+        padding: 10px 0;
+
+        @include mp {
+            display: block;
+            background: #aa0601;
+            border-top: 1px solid #ffffff;
+            padding: 16px 0;
+            z-index: 120;
+
+
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+            font-weight: bold;
+
+        }
+
+        .nav-menu li:hover {
+            @include mp {
+                background: #8f0400;
+
+            }
+
+        }
+
+        a:hover {
+            border-bottom: 3px solid #FFB7DD;
+            padding-bottom: 10px;
+
+            @include mp {
+                border-bottom: 0;
+                padding-bottom: 0;
+                background-color: #650300;
+            }
+        }
+
+        a:active {
+            color: #FFB7DD;
+        }
+    }
+
+    .menubtn {
+        display: none;
+
+        @include mp {
+            padding-top: 8px;
+            display: block;
+            position: absolute;
+            left: 13px;
+            width: 24px;
+            color: #fff;
+            font-weight: 900;
+        }
+    }
+}
+
+//banner
+.banner-pic {
+    background-image: url('https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/banner.png?raw=true');
+    background-size: cover;
+    background-position: center center;
+    height: 840px;
+    align-items: center;
+    background-repeat: no-repeat;
+
+    @include mp {
+
+        background-image: url("https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/banner-sm.png?raw=true");
+        height: 394px;
+        max-width: 100%;
+
+    }
+
+    .banner-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        height: 100%;
+
+        @include pad {
+
+            max-width: 692px;
+        }
+
+
+
+    }
+
+    .banner-title {
+
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+
+        @include mp {
+            justify-content: center;
+        }
+
+    }
+
+    .banner-text {
+        font-weight: bold;
+        color: #AA0601;
+        font-size: 64px;
+        text-align: right;
+
+        @include pad {
+            font-size: 48px;
+        }
+
+        @include mp {
+            font-size: 32px;
+        }
+    }
+
+
+    .banner-textSm {
+        font-size: 36px;
+        line-height: 96px;
+
+        @include pad {
+            font-size: 20px;
+        }
+
+        @include mp {
+            font-size: 16px;
+            line-height: 0;
+
+        }
+    }
+
+}
+
+//用專業的心，做專業的事
+.product-Content {
+    background-color: #AA06010D;
+    padding-top: 64px;
+
+    @include pad {
+        padding-top: 40px;
+    }
+
+
+    @include pad {
+        .container {
+            max-width: 672px
+        }
+    }
+
+    h2 {
+        color: #650300;
+        font-size: 48px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 64px;
+
+        @include pad {
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+
+        @include mp {
+            font-size: 24px;
+            margin-bottom: 32px;
+        }
+
+    }
+
+
+    .product-item {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: wrap;
+        padding: 16px 0 80px 0;
+
+        .product-inside {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 25%;
+
+            @include pad {
+                padding: 20px 0 8px;
+                width: 50%
+            }
+
+            @include mp {
+
+                width: 100%
+            }
+        }
+
+
+
+
+
+        .product-img {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 40px;
+
+            @include pad {
+                margin-bottom: 0;
+                padding-bottom: 16px;
+
+
+            }
+
+            img {
+                height: 100%;
+                display: block;
+            }
+        }
+
+        .product-txt {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #650300;
+
+
+
+            h3 {
+                font-size: 24px;
+                font-weight: bold;
+                line-height: 36px;
+                margin-bottom: 8px;
+
+                @include pad {
+
+                    font-size: 20px;
+
+                }
+
+
+
+            }
+
+            p {
+                max-width: 210px;
+                line-height: 24px;
+                color: #000;
+                font-weight: 500;
+                text-align: left;
+
+                @include pad {
+                    max-width: 224px;
+                    line-height: 1.5em;
+
+                }
+            }
+        }
+
+        @include pad {
+            .order-1 {
+                order: 4;
+            }
+
+            .order-2 {
+                order: 3;
+            }
+
+            .order-3 {
+                order: 2;
+            }
+
+            .order-4 {
+                order: 1;
+            }
+
+        }
+
+
+    }
+
+
+
+}
+
+//經典系列鏡框
+.classic-Content {
+    padding-top: 64px;
+    margin-bottom: 80px;
+
+    @include pad {
+
+        padding-top: 40px;
+        margin-bottom: 40px;
+    }
+
+    @include mp {
+        padding-top: 24px;
+        margin-bottom: 24px;
+    }
+
+
+    h2 {
+        color: #650300;
+        font-size: 48px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 60px;
+
+    }
+
+    @include pad {
+        .container {
+            max-width: 672px;
+        }
+
+        h2 {
+            font-size: 32px;
+            margin-bottom: 32px;
+        }
+    }
+
+
+    @include mp {
+        .container {
+            max-width: 375px;
+            padding: 0 12px;
+        }
+
+        h2 {
+            font-size: 24px;
+            margin-bottom: 24px;
+
+        }
+
+    }
+
+    .classic-inside {
+        margin-bottom: 32px;
+
+        @include pad {
+            margin-bottom: 8px;
+
+            img {
+                width: 60%;
+            }
+
+        }
+
+        @include mp {
+            position: relative;
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+
+//圖片點擊動態
+
+.tureColor-img {
+    position: relative;
+}
+
+.tureColor-img::after {
+    background-image: url("https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/product-2-color.png?raw=true");
+    position: absolute;
+    content: '';
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-size: contain;
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-position: center right;
+
+    @include pad {
+        background-position: center left;
+    }
+
+}
+
+.tureColor-img:hover::after {
+    transition: all 1s ease-out;
+    opacity: 1;
+
+}
+
+.classic-img {
+    width: 100%;
+
+    li {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+    }
+
+    .classic-inside:nth-child(even) {
+        flex-direction: row-reverse;
+
+        @include pad {
+
+            flex-direction: initial;
+
+        }
+    }
+
+
+}
+
+.classic-optical {
+    margin-left: 24px;
+    color: #AA0601;
+    font-size: 48px;
+    font-weight: 500;
+    font-style: italic;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include pad {
+        width: 40%;
+        font-size: 28px;
+
+        img {
+            max-width: 32px;
+        }
+
+    }
+
+    @include mp {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: 28px;
+        color: #fff;
+        filter: brightness(500);
+        //好炫炮效果
+    }
+}
+
+.classic-row {
+    margin-left: 0;
+    margin-right: 24px;
+
+    @include pad {
+
+        margin-left: 24px;
+        margin-right: 0;
+
+    }
+}
+
+
+
+
+
+//聯名設計鏡框
+.design-Content {
+    background-image: url("https://github.com/hexschool/webLayoutTraining1st/blob/master/week3/bg.png?raw=true");
+    background-position: center center;
+    background-repeat: no-repeat;
+    padding-bottom: 350px;
+
+    @include pad {
+        padding-bottom: 450px;
+    }
+
+    h2 {
+        padding-top: 60px;
+        color: #fff;
+        font-size: 48px;
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 60px;
+
+        @include pad {
+            font-size: 32px;
+            margin-bottom: 32px;
+            padding-top: 40px;
+
+        }
+
+    }
+
+    .designitem-Bgsize {
+        max-width: 1440px;
+        margin: 0 auto;
+
+        @include pad {
+
+            max-width: 672px;
+        }
+
+        @include mp {
+
+            max-width: 375px;
+
+        }
+
+
+    }
+
+    .design-inside {
+        @include mp {
+
+            padding: 0 12px;
+        }
+
+    }
+
+
+    .designItem {
+        display: flex;
+        justify-content: center;
+
+
+        @include mp {
+
+            flex-direction: column;
+        }
+
+        .designMr-1 {
+            margin-right: 8px;
+
+            @include mp {
+
+                margin-right: 0;
+            }
+        }
+
+
+        .designMb-1 {
+            margin-bottom: 8px;
+        }
+
+        .d-flex {
+            display: flex;
+        }
+
+        .designItem-bottom {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+
+
+        }
+
+        .more-pic {
+            margin: 8px 88px 0 0;
+
+            @include pad {
+                margin: 0 88px 0 0;
+
+            }
+
+            @include mp {
+                margin: 6px 50px 0 0;
+                ;
+            }
+
+            img {
+                max-width: 259px;
+                max-height: 167px;
+
+                @include pad {
+                    max-width: 147px;
+                    max-height: 77px;
+                }
+
+                @include mp {
+                    max-width: 102px;
+                    max-height: 53px;
+                }
+
+            }
+
+
+
+
+        }
+
+        .more-item {
+            position: relative;
+
+
+            .more-bg {
+                background-color: #fff;
+                padding: 10px 65px 10px 20px;
+                position: absolute;
+                top: -135px;
+                left: 30px;
+
+
+                @include pad {
+                    padding: 10px 50px 10px 10px;
+                    top: -73px;
+                    left: 15px;
+                }
+
+                @include mp {
+                    padding: 5px 30px 5px 10px;
+                    top: -48px;
+                    left: 10px;
+                }
+
+            }
+
+            span {
+                color: #AA0601;
+                font-size: 72px;
+                font-weight: bold;
+                text-decoration: none;
+
+                @include pad {
+                    font-size: 40px;
+                }
+
+                @include mp {
+                    font-size: 26px;
+                }
+
+
+            }
+
+            .more-arrow {
+                position: absolute;
+                bottom: 20px;
+                right: 10px;
+
+                @include pad {
+
+                    width: 27px;
+                    height: 27px;
+                }
+
+                @include mp {
+                    bottom: 8px;
+                    right: 5px;
+                    width: 18px;
+                    height: 18px;
+                }
+
+
+                img {
+                    width: 48px;
+                    height: 48px;
+
+
+                }
+
+
+            }
+
+
+        }
+
+
+    }
+
+
+    .designItem-op {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 80px;
+        padding-top: 60px;
+
+        @include pad {
+            padding-top: 16px;
+            margin-bottom: 32px;
+
+
+        }
+
+        @include mp {
+            flex-direction: column;
+            max-width: 100%;
+
+
+        }
+
+
+        .designBg-op {
+            position: relative;
+
+        }
+
+        .designBg-op:first-of-type {
+            margin-right: 30px;
+
+            @include mp {
+                margin-right: 0;
+                margin-bottom: 8px;
+
+            }
+        }
+
+
+        .designBg-op::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background-color: rgba(255, 255, 255, .5);
+        }
+
+        .designBg-op {
+
+            span {
+                color: #AA0601;
+                font-size: 72px;
+                z-index: 10000;
+                position: absolute;
+                font-weight: bold;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                white-space: nowrap;
+
+                @include pad {
+                    font-size: 32px;
+
+
+                }
+
+
+            }
+
+        }
+    }
+
+
+
+}
+
+//顧客推薦
+.client {
+    margin-top: -362px;
+
+    @include pad {
+        margin-top: -402px;
+    }
+}
+
+.client-txt {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 60px;
+
+    @include pad {
+
+        .container {
+            max-width: 672px;
+
+        }
+    }
+
+    @include mp {
+
+        .container {
+            max-width: 375px;
+        }
+
+        font-size: 32px;
+        margin-bottom: 40px;
+    }
+
+}
+
+.client-Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // padding-top:-368px;
+
+    @include pad {
+        flex-wrap: wrap;
+
+    }
+
+
+    .client-card {
+        background-color: #FFF;
+        justify-content: space-around;
+        align-items: center;
+        margin: 0 8px;
+
+
+        @include pad {
+            margin: 0;
+            width: 43%;
+            margin-bottom: 24px;
+            margin-right: 16px;
+            margin-left: 16px;
+        }
+
+        @include mp {
+
+            width: 100%;
+
+        }
+
+
+        img {
+            display: block;
+            width: 100%;
+
+        }
+    }
+
+    .card-body {
+        padding: 8px;
+        line-height: 24px;
+        font-weight: 500;
+        border: 1px solid #dee2e6;
+
+
+        h3 {
+            margin-bottom: 16px;
+            font-weight: bold;
+        }
+
+    }
+
+    .card-ago {
+        color: #707070;
+        line-height: 24px;
+        margin: 16px 0;
+
+    }
+}
+
+//聯絡我們
+
+.contact-Content {
+    background-color: #AA06010D;
+    margin-top: 160px;
+
+    @include pad {
+        margin-top: 40px;
+
+    }
+
+
+    .container-Size {
+        max-width: 792px;
+        margin: 0 auto;
+
+        @include pad {
+            max-width: 672px;
+            margin: 0 80px;
+
+        }
+
+        @include mp {
+            max-width: 375px;
+            margin: 0 24px;
+
+
+        }
+
+    }
+
+    .contact-title {
+
+        color: #000;
+        font-weight: bold;
+
+        h2 {
+            padding-top: 64px;
+            font-size: 48px;
+            margin-bottom: 24px;
+            text-align: center;
+
+            @include pad {
+                font-size: 32px;
+                padding-top: 40px;
+                margin-bottom: 16px;
+            }
+
+        }
+
+        p {
+            font-size: 20px;
+            line-height: 24px;
+
+
+            @include pad {
+                font-size: 16px;
+
+            }
+
+
+        }
+    }
+
+    .contact-input {
+        padding-top: 20px;
+
+        .contact-bg {
+            background-color: rgba(255, 191, 189, 0.1);
+            border: 1px solid #000;
+
+        }
+
+
+        input[type="text"] {
+            width: 100%;
+            height: 50px;
+            margin: 8px 0 16px 0;
+
+        }
+
+        textarea {
+            width: 100%;
+            resize: none;
+            height: 136px;
+            margin: 8px 0 16px 0;
+
+        }
+
+        input[type="checkbox"] {
+            display: none;
+
+        }
+
+        ::placeholder {
+            padding: 8px;
+        }
+
+        .contact-Checkbox {
+            position: relative;
+            line-height: 24px;
+        }
+
+
+
+        .contact-Checkbox::before {
+            position: absolute;
+            content: "\2714";
+            border: 1px solid #000;
+            border-radius: 10%;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            padding: 1px 0 1px 3px;
+            margin-right: 8px;
+            color: transparent;
+
+            .contact-Checkbox:checked {
+                background-color: #AA0601;
+                border-color: #AA0601;
+                color: #fff;
+
+            }
+
+
+
+        }
+
+        .contact-Checkbox {
+            label {
+                margin-left: 24px;
+            }
+
+        }
+
+        .submit {
+            margin-top: 24px;
+            text-align: center;
+
+
+            input[type="submit"] {
+                padding: 22px 80px;
+                background-color: #AA0601;
+                cursor: pointer;
+                border: none;
+                color: #fff;
+                font-weight: 500;
+                margin-bottom: 92px;
+                margin-top: 31px;
+
+                @include pad {
+                    padding: 12px 34px;
+                    margin-bottom: 63px;
+
+                }
+            }
+        }
+
+    }
+
+}
+
+//頁尾
+.footer-Content {
+    background-color: #AA0601;
+
+    @include pad {
+        .container {
+            max-width: 672px;
+
+        }
+    }
+
+    @include mp {
+        .container {
+            max-width: 375px;
+            padding: 8px;
+
+        }
+
+    }
+
+    .footer-nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: 32px;
+
+        @include mp {
+            padding-top: 24px;
+            justify-content:end;
+            align-items: flex-end;
+
+        }
+
+
+        .footer-Options {
+            display: flex;
+
+
+            @include mp {
+                display: none;
+            }
+
+        }
+
+
+
+        li {
+            padding-right: 24px;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+
+    .footer-icon {
+
+
+        .footer-iconItem {
+             display: flex;
+             justify-content: end;
+             li{
+                align-items: flex-end;
+             }
+
+
+
+        }
+
+        img {
+            width: 48px;
+            height: 48px;
+
+            @include pad {
+                max-width: 24px;
+                max-height: 24px;
+            }
+
+        }
+    }
+
+
+
+    .footer-item {
+
+        border-bottom: 1px solid #fff;
+        margin-bottom: 16px;
+
+
+        img {
+            width: 36px;
+            height: 36px;
+            margin-right: 16px;
+
+            @include pad {
+                width: 23px;
+                height: 23px;
+            }
+
+        }
+
+        span {
+            font-size: 36px;
+            color: #fff;
+            line-height: 54px;
+
+            @include pad {
+                font-size: 20px;
+            }
+
+        }
+    }
+
+    .footer-bottem {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        @include mp{
+           display: block;
+           font-size: 14px;
+
+        }
+
+        .footer-logo {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 24px;
+
+            img {
+                max-width: 48px;
+                max-height: 48px;
+
+
+            }
+        }
+
+        .footer-cis {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            margin-bottom: 24px;
+            @include mp{
+               font-size: 14px;
+               
+                
+             }
+
+            img {
+                max-width: 80px;
+                max-height: 48px;
+
+                @include pad {
+                    display: none;
+
+
+                }
+            }
+        }
+
+        .footer-Copyright {
+            color: #fff;
+            margin-left: 24px;
+
+            @include pad {
+                margin-left: 0;
+
+
+            }
+
+        }
+
+        .footer-list {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            @include mp{
+                display: block;
+            }
+
+            li {
+                padding-right: 16px;
+                margin-bottom: 32px;
+                @include mp{
+                    margin-bottom:16px;
+                }
+            }
+           
+
+            a {
+                color: #fff;
+                text-decoration: none;
+
+            }
+        }
+    }
+
+}
